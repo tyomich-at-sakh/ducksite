@@ -1,10 +1,93 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#b9e7f5">
+    <meta name="description" content="Маленький интерактивный мир утки. Покорми её, услышь кряканье и узнай её настроение.">
+    <title>Утиный мир 🦆</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
+    <main class="pond">
+        <header class="header">
+            <h1>Утиный мир <span>🦆</span></h1>
+            <p>Загляни к утке в гости!</p>
+        </header>
 
+        <section class="duck-home" aria-label="Твой утёнок">
+            <div class="sun" aria-hidden="true">☀️</div>
+            <div class="cloud cloud-one" aria-hidden="true">☁️</div>
+            <div class="cloud cloud-two" aria-hidden="true">☁️</div>
+
+            <div class="duck" id="duck" role="button" tabindex="0"
+                 aria-label="Погладить утку">
+                <div class="duck-emoji" id="duckEmoji">🦆</div>
+                <div class="duck-message" id="duckMessage" aria-live="polite">
+                    Кря! Привет!
+                </div>
+            </div>
+
+            <div class="water" aria-hidden="true">
+                <span>〰️</span><span>〰️</span><span>〰️</span>
+            </div>
+            <div class="lily lily-one" aria-hidden="true">🌿</div>
+            <div class="lily lily-two" aria-hidden="true">🪷</div>
+        </section>
+
+        <section class="actions" aria-label="Действия с уткой">
+            <button id="feedButton" type="button">🍞 Покормить</button>
+            <button id="quackButton" type="button">🔊 Крякнуть</button>
+            <button id="petButton" type="button">❤️ Погладить</button>
+        </section>
+
+        <section class="stats" aria-label="Статистика утки">
+            <h2>Наша история</h2>
+            <div class="stat-grid">
+                <article class="stat">
+                    <span aria-hidden="true">🍞</span>
+                    <p>Покормили</p>
+                    <strong id="feedCount">0</strong>
+                </article>
+                <article class="stat">
+                    <span aria-hidden="true">🗣️</span>
+                    <p>Крякнула</p>
+                    <strong id="quackCount">0</strong>
+                </article>
+                <article class="stat">
+                    <span aria-hidden="true">❤️</span>
+                    <p>Настроение</p>
+                    <strong id="mood">Любопытное</strong>
+                </article>
+                <article class="stat">
+                    <span aria-hidden="true">🏆</span>
+                    <p>Секреты</p>
+                    <strong id="secretCount">0 / 3</strong>
+                </article>
+            </div>
+        </section>
+
+        <section class="secrets">
+            <h2>🐣 Маленькие секреты</h2>
+            <p id="secretMessage" aria-live="polite">
+                У утки есть три секрета. Сможешь открыть их все?
+            </p>
+            <ul id="secretList">
+                <li id="secretFeed">🔒 Первое угощение</li>
+                <li id="secretQuack">🔒 Первое кряканье</li>
+                <li id="secretPet">🔒 Десять поглаживаний</li>
+            </ul>
+        </section>
+
+        <footer>
+            <p>Твой маленький уголок спокойствия 🪷</p>
+            <p class="privacy">Без cookies и слежки. Прогресс хранится только в этом браузере.</p>
+            <button id="resetButton" class="reset-button" type="button">
+                Начать заново
+            </button>
+        </footer>
+    </main>
 </body>
 </html>
